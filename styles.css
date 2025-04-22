@@ -1,11 +1,131 @@
+styles.css
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
 body {
-  background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 100px;
+    background-image: url('croatia-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates parallax effect */
+    background-repeat: no-repeat;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Transparent Header styles */
+header {
+    background-color: transparent;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+/* Header becomes visible on scroll */
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo a {
+    color: rgb(224, 190, 19);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: rgb(5, 188, 234); /* Croatian blue */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d52b1e; /* Croatian red */
+}
+
+/* Main content styles */
+main {
+    padding: 8rem 2rem 4rem; /* Extra top padding for fixed header */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0);
+    margin-bottom: 2rem;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: #1b3d6d;
+    font-size: 2.5rem;
 }
 
 p {
-  color: #333;
-  font-size: 24px;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Transparent Footer styles */
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+    
+    main {
+        padding: 7rem 1rem 2rem;
+    }
+    
+    section {
+        padding: 2rem;
+    }
 }
